@@ -1,37 +1,42 @@
 <!-- src/routes/+page.svelte -->
 
 <!-- HERO -->
-<div class="absolute inset-0 -z-10 overflow-hidden">
-  <!-- Fallback for users who prefer reduced motion -->
-  <img
-    src="/media/hero-fallback.jpg"
-    alt=""
-    aria-hidden="true"
-    class="hidden absolute inset-0 h-full w-full object-cover motion-reduce:block"
-    loading="eager"
-    decoding="async"
-  />
+<section class="relative overflow-hidden">
+  <div class="relative w-full overflow-hidden">
+    <!-- Mobile: 16:9; ≥md: 2.35:1 -->
+    <div class="relative mx-auto w-full aspect-video md:aspect-[235/100] max-w-[100vw]">
+      <!-- Background -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <!-- Fallback for reduced motion -->
+        <img
+          src="/media/hero-fallback.jpg"
+          alt=""
+          aria-hidden="true"
+          class="hidden absolute inset-0 h-full w-full object-cover motion-reduce:block"
+          loading="eager"
+          decoding="async"
+        />
 
-  <!-- Background video (cover) -->
-  <video
-    class="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="/media/hero-fallback.jpg"
-  >
-    <!-- If you also have WebM, list it first for better compression -->
-    <!-- <source src="/media/oguzhanllc.webm" type="video/webm" /> -->
-    <source src="/media/oguzhanllc.mp4" type="video/mp4" />
-  </video>
+        <!-- Local video (cover) -->
+        <video
+          class="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/media/hero-fallback.jpg"
+          aria-hidden="true"
+        >
+          <!-- If you also have WebM, list it first -->
+          <!-- <source src="/media/oguzhanllc.webm" type="video/webm" /> -->
+          <source src="/media/oguzhanllc.mp4" type="video/mp4" />
+        </video>
 
-  <!-- Overlays -->
-  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/45"></div>
-  <div class="pointer-events-none absolute top-0 left-0 h-[12%] w-full bg-gradient-to-b from-black/70 to-transparent"></div>
-</div>
-
+        <!-- Overlays -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/45"></div>
+        <div class="pointer-events-none absolute top-0 left-0 h-[12%] w-full bg-gradient-to-b from-black/70 to-transparent"></div>
+      </div>
 
       <!-- Content -->
       <div class="relative z-10 grid h-full place-items-center">
@@ -46,15 +51,14 @@
               to deliver predictable, scalable trucking solutions.
             </p>
 
-<div class="mt-5 hidden sm:flex items-center justify-center gap-3">
-  <a href="/contact" class="inline-flex items-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-brand-600">
-    Get a Quote
-  </a>
-  <a href="#partners" class="inline-flex items-center rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10">
-    Our Partners
-  </a>
-</div>
-
+            <div class="mt-5 hidden sm:flex items-center justify-center gap-3">
+              <a href="/contact" class="inline-flex items-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-brand-600">
+                Get a Quote
+              </a>
+              <a href="#partners" class="inline-flex items-center rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10">
+                Our Partners
+              </a>
+            </div>
           </div>
         </div>
       </div>
