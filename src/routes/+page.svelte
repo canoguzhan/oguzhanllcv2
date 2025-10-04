@@ -1,38 +1,37 @@
 <!-- src/routes/+page.svelte -->
 
 <!-- HERO -->
-<section class="relative overflow-hidden">
-  <div class="relative w-full overflow-hidden">
-    <!-- Mobile: 16:9; ≥md: 2.35:1 -->
-    <div class="relative mx-auto w-full aspect-video max-w-[100vw]">
-      <!-- Background -->
-      <div class="absolute inset-0 -z-10 overflow-hidden">
-        <!-- Fallback for reduced motion -->
-        <img
-          src="/hero-fallback.jpg"
-          alt=""
-          aria-hidden="true"
-          class="hidden absolute inset-0 h-full w-full object-cover motion-reduce:block"
-          loading="eager"
-          decoding="async"
-        />
+<div class="absolute inset-0 -z-10 overflow-hidden">
+  <!-- Fallback for users who prefer reduced motion -->
+  <img
+    src="/media/hero-fallback.jpg"
+    alt=""
+    aria-hidden="true"
+    class="hidden absolute inset-0 h-full w-full object-cover motion-reduce:block"
+    loading="eager"
+    decoding="async"
+  />
 
-        <!-- Streamable (cover) -->
-        <div class="absolute inset-0 motion-reduce:hidden">
-        <iframe
-          class="absolute inset-0 w-full h-full border-0"
-          src="https://streamable.com/e/2zz7bs?autoplay=1&muted=1&loop=1&nocontrols=1&hd=1"
-          allow="autoplay; fullscreen; picture-in-picture"
-          loading="lazy"
-          title=""
-        ></iframe>
+  <!-- Background video (cover) -->
+  <video
+    class="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/media/hero-fallback.jpg"
+  >
+    <!-- If you also have WebM, list it first for better compression -->
+    <!-- <source src="/media/oguzhanllc.webm" type="video/webm" /> -->
+    <source src="/media/oguzhanllc.mp4" type="video/mp4" />
+  </video>
 
-        </div>
+  <!-- Overlays -->
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/45"></div>
+  <div class="pointer-events-none absolute top-0 left-0 h-[12%] w-full bg-gradient-to-b from-black/70 to-transparent"></div>
+</div>
 
-        <!-- Overlays -->
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/45"></div>
-        <div class="pointer-events-none absolute top-0 left-0 h-[12%] w-full bg-gradient-to-b from-black/70 to-transparent"></div>
-      </div>
 
       <!-- Content -->
       <div class="relative z-10 grid h-full place-items-center">
