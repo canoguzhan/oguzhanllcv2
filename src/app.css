@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html { scroll-behavior: smooth; overflow-x: clip; }
+	:root { color-scheme: light; }
+	body { @apply bg-white text-slate-900 antialiased; overflow-x: clip; }
+}
+
+@layer utilities {
+	.text-balance { text-wrap: balance; }
+
+	/* Hide icon blocks inside card groups and the Our Goals section to remove visual icons while preserving layout */
+	.group .h-14,
+	.group .h-12,
+	#about .h-12,
+	#about .h-14,
+	#about svg.h-6,
+	.group svg.h-6 {
+		display: none !important;
+	}
+}
