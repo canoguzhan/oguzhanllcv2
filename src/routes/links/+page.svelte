@@ -2,8 +2,8 @@
   // Data
   const phones = [
     { label: "Main",     display: "+1 (227) 250-2476", tel: "+12272502476" },
-    { label: "Dispatch", display: "+1 (929) 928-5805", tel: "+19299285805" },
-    { label: "Ops",      display: "+1 (917) 502-8424", tel: "+19175028424" }
+    { label: "Alternative", display: "+1 (929) 928-5805", tel: "+19299285805" },
+    { label: "Alternative",      display: "+1 (917) 502-8424", tel: "+19175028424" }
   ];
 
   const socials = [
